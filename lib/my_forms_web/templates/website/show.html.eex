@@ -1,0 +1,38 @@
+<h2>Show Website</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @website.title %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @website.url %>
+  </li>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @website.type %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @website.status %>
+  </li>
+
+  <li>
+    <strong>Frequency:</strong>
+    <%= @website.frequency %>
+  </li>
+
+  <li>
+    <strong>XPath</strong>
+    <%= @website.html_scraper.xpath %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: website_path(@conn, :edit, @website) %></span>
+<span><%= link "Back", to: website_path(@conn, :index) %></span>

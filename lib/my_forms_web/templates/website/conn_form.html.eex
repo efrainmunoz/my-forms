@@ -1,0 +1,36 @@
+<%= form_for @conn, website_path(@conn, :new), [as: :website], fn f -> %>
+
+  <div class="form-group">
+    <%= label f, :title, class: "control-label" %>
+    <%= text_input f, :title, class: "form-control" %>
+    <%= error_tag f, :title %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :url, class: "control-label" %>
+    <%= text_input f, :url, class: "form-control" %>
+    <%= error_tag f, :url %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :type, class: "control-label" %>
+    <%= select f, :type, [[key: "HTML Scraper", value: "html"], [key: "JSON Scraper", value: "json"]], class: "form-control" %>
+    <%= error_tag f, :type %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :status, class: "control-label" %>
+    <%= select f, :status, [[key: "Disabled", value: "disabled"], [key: "Active", value: "active"]], class: "form-control" %>
+    <%= error_tag f, :status %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :frequency, class: "control-label" %>
+      <%= select f, :frequency, [[key: "15", value: 15], [key: "30", value: 30]], class: "form-control" %>
+    <%= error_tag f, :frequency %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
